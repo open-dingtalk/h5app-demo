@@ -18,7 +18,7 @@ public class BizController {
     BizManager bizManager;
 
     @RequestMapping("/hello")
-    public RpcServiceResult hello(){
+    public RpcServiceResult hello() {
         String hello = bizManager.hello();
         if(StringUtils.isEmpty(hello)){
             return RpcServiceResult.getFailureResult("-1", "fail");
