@@ -1,15 +1,12 @@
-# XXXXDemo
+# （demo名称）
 
-> - 此demo主要展示XXXX相关功能，包括创建XXXX。
-> - 项目结构
-    >   - rear-end：后端模块，springboot构建，功能接口功能包括：XXXX。
->   - front-end：前端模块，react构建，场景功能包括：XXXX。
+> - （demo介绍）
+> - （demo结构）
 >
-> （介绍demo的功能，请自行发挥）
 
 
 
-### 研发环境准备
+## 研发环境准备
 
 1. 需要有一个钉钉注册企业，如果没有可以创建：https://oa.dingtalk.com/register_new.htm#/
 
@@ -33,18 +30,67 @@
 
 本demo使用接口相关权限：
 
-"A权限"、"B权限"（请填写该demo需要申请的权限）
+（列举该demo需要申请的权限）
 
 ![image-20210706172027870](https://img.alicdn.com/imgextra/i3/O1CN016WCr6428wDdBhkWi6_!!6000000007996-2-tps-1358-571.png)
 
+## 脚本启动（推荐）
 
+### 脚本说明
 
-### 运行
-
-**下载本项目至本地**
+脚本中内置了内网穿透工具，不需要再额外启动
 
 ```shell
-git clone https://github.com/open-dingtalk/h5app-XXX.git
+dingBoot-linux.sh     # linux版本
+dingBoot-mac.sh       # mac版本
+dingBoot-windows.bat  # windows版本
+```
+
+### 启动命令
+
+执行时将其中参数替换为对应的应用参数，在backend目录下执行（脚本同级目录），参数获取方法：
+
+1. 获取corpId——开发者后台首页：https://open-dev.dingtalk.com/#/index
+2. 进入应用开发-企业内部开发-点击进入应用-基础信息-获取appKey、appSecret、agentId
+
+- **启动linux脚本**
+
+```shell
+./dingBoot-linux.sh start {项目名} {端口号} {appKey} {appSecret} {agentId} {corpId}
+```
+- **mac系统(mac m1芯片暂不支持)**
+
+```shell
+./dingBoot-mac.sh start {项目名} {端口号} {appKey} {appSecret} {agentId} {corpId}
+```
+- **windows系统 使用cmd命令行启动**
+
+```shell
+./dingBoot-windows.bat {项目名} {端口号} {appKey} {appSecret} {agentId} {corpId}
+```
+
+- **示例（linux脚本执行）**
+
+```sh
+ ./dingBoot-linux.sh start h5-demo 8080 ding1jmkwa4o19bxxxx ua2qNVhleIx14ld6xgoZqtg84EE94sbizRvCimfXrIqYCeyj7b8QvqYxxx 122549400 ding9f50b15bccd1000
+```
+
+### 启动后配置
+
+1. **配置地址**
+
+启动完成会自动生成临时域名，配置方法：进入开发者后台->进入应用->开发管理->应用首页地址和PC端首页地址
+
+2. **发布应用**
+
+配置好地址后进入“版本管理与发布页面”，发布应用，发布后即可在PC钉钉或移动钉钉工作台访问应用
+
+## 手动启动
+
+### 下载本项目至本地
+
+```shell
+git clone (demo下载地址)
 ```
 
 ### 获取相应参数
@@ -89,7 +135,5 @@ npm run build
 
 ### **参考文档**
 
-1. 获取企业内部应用access_token，文档链接：https://developers.dingtalk.com/document/app/obtain-orgapp-token?spm=ding_open_doc.document.0.0.938247e54bE13v#topic-1936350
-2. XXX
-
-（请完善此处的文档链接）
+1. 获取企业内部应用access_token，文档链接：https://developers.dingtalk.com/document/app/obtain-orgapp-token
+2. （请完善文档）
